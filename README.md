@@ -62,8 +62,9 @@ This project is a cloud-based **Event Announcement System** that allows users to
   "location": "Colombo"
 }
 ```
-````
+
 ** Your email (subscribed to SNS) should receive: **
+````
 📣 New Event Created!
 
 Title: Tech Conference 2025
@@ -73,6 +74,7 @@ Location: Colombo
 
 👨‍💻 Author
 Samudini Chamodya
+
 GitHub: @Samudini-Chamodya
 
 
