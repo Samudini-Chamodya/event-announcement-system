@@ -1,0 +1,7 @@
+curl -X POST https://e2i4xlh90j.execute-api.us-east-1.amazonaws.com/CreateEvent \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Tech Conference",
+    "date": "2025-05-05",
+    "location": "Colombo"
+  }'
