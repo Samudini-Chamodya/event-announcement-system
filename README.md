@@ -61,13 +61,15 @@ This project is a cloud-based **Event Announcement System** that allows users to
   "date": "2025-05-10",
   "location": "Colombo"
 }
-
+```
+````
 ** Your email (subscribed to SNS) should receive: **
 📣 New Event Created!
 
 Title: Tech Conference 2025
 Date: 2025-05-10
 Location: Colombo
+````
 
 👨‍💻 Author
 Samudini Chamodya
