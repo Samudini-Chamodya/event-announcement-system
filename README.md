@@ -2,57 +2,64 @@
 
 This project is a cloud-based **Event Announcement System** that allows users to create events and notify subscribers via email in real time. It uses AWS services such as **Lambda**, **SNS**, **API Gateway**, and **IAM**.
 
+
 > ✅ Developed as part of an AWS learning assignment using only the AWS Free Tier.
 
 ---
 
-## 📌 Project Features
+## 📌 Features
 
 - 📬 Send email notifications about new events
-- ✅ Automatically trigger on API request using AWS Lambda
-- 🌐 API Gateway acts as the public entry point
-- 🔐 Uses IAM roles for secure access to AWS services
-- 📧 SNS (Simple Notification Service) sends emails to subscribers
+- ✅ Triggered by HTTP request via API Gateway
+- 🧠 Processes events using AWS Lambda
+- 🔐 IAM roles for secure access
+- 📧 AWS SNS sends emails to subscribers instantly
 
 ---
 
 ## 🧱 Architecture Overview
 
+![Architecture Diagram](images/diagram.png)
 
-- User triggers the event via HTTP request
-- Lambda receives event data and publishes a message to SNS
-- SNS sends email to all subscribed users
+**Workflow:**
+1. A user sends an HTTP request to API Gateway.
+2. API Gateway triggers the Lambda function.
+3. Lambda publishes the event to an SNS Topic.
+4. SNS sends emails to all subscribed users.
 
 ---
 
-## 🛠️ AWS Services Used
+##  AWS Services Used
 
 | Service         | Purpose                                                  |
-|----------------|----------------------------------------------------------|
-| **AWS Lambda**  | Backend logic to process event and publish to SNS       |
-| **AWS SNS**     | Sends event email to all email subscribers              |
-| **AWS API Gateway** | Public HTTP endpoint to trigger Lambda           |
-| **IAM Roles**   | Controls Lambda access to other AWS services            |
+|-----------------|----------------------------------------------------------|
+| **Lambda**      | Processes incoming events and sends messages to SNS      |
+| **SNS**         | Distributes emails to all subscribers                    |
+| **API Gateway** | Public HTTP endpoint to invoke Lambda                    |
+| **IAM Roles**         | Grants necessary permissions to Lambda                   |
 
 ---
 
-## 🧪 How to Test the System
+## How to Test the System (Step-by-Step)
 
-1. **Create an SNS Topic**
-   - Go to the AWS SNS Console
-   - Create a topic (e.g., `EventAnnouncements`)
-   - Subscribe your email and confirm it
+###  1. Create an SNS Topic
 
-2. **Create the Lambda Function**
+Go to **AWS SNS Console** → Topics → Create Topic  
+- Type: Standard  
+- Name: `EventAnnouncements`
+
+![SNS Topic Screenshot](images/snsTopic(2).png)
+
+###  2. Create the Lambda Function
    - Use the `lambda_function.py` code 
    - Set up IAM role with `SNS:Publish` permission
    - Replace the SNS Topic ARN in the code
 
-3. **Create an API Gateway**
+###  3. Create an API Gateway
    - Create a new REST or HTTP API
    - Connect it to your Lambda function
 
-4. **Trigger with Test Payload**
+### 4. Trigger with Test Payload
    - Use Postman,or cURL or a test client to send this JSON:
 
 ```json
@@ -72,9 +79,8 @@ Date: 2025-05-10
 Location: Colombo
 ````
 
-👨‍💻 Author
-Samudini Chamodya
 
-GitHub: @Samudini-Chamodya
+📩 Confirm the subscription from your email inbox.
 
+![SNS Email Subscription](images/notification.png)
 
