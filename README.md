@@ -62,10 +62,12 @@ Go to **AWS SNS Console** → Topics → Create Topic
 ### 4. Trigger with Test Payload
    - Use Postman,or cURL or a test client to send this JSON:
 
+![cURL test](images/Test.png)
+
 ```json
 {
-  "title": "Tech Conference 2025",
-  "date": "2025-05-10",
+  "title": "Tech Conference ",
+  "date": "2025-05-05",
   "location": "Colombo"
 }
 ```
@@ -74,8 +76,8 @@ Go to **AWS SNS Console** → Topics → Create Topic
 ````
 📣 New Event Created!
 
-Title: Tech Conference 2025
-Date: 2025-05-10
+Title: Tech Conference 
+Date: 2025-05-05
 Location: Colombo
 ````
 
